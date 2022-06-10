@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Productos</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<h1>LISTA DE PRODUCTOS:</h1>
+<form action='/api/productos', method='post'>
+    <label for="nombre">nombre</label>
+    <input type="text" name="nombre"><br>
+
+    <label for="precio">precio</label>
+    <input type="text" name="precio"><br>
+
+    <label for="descripcion">descripcion</label>
+    <input type="text" name="descripcion"><br>
+
+    <label for="imagen">imagen</label>
+    <input type="text" name="imagen"><br>
+
+    <label for="codigo">codigo</label>
+    <input type="text" name="codigo"><br>
+
+    <label for="stock">stock</label>
+    <input type="text" name="stock"><br>
+
+    <button type="submit" id="botonAgregar">Agregar Producto</button>
+</form>
+<button onClick="window.location.reload();">Refrescar pagina</button>
+
+<div id="cardsContainer"></div>
+<script src="index.js"></script>
+</body>
+</html>

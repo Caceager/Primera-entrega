@@ -1,0 +1,19 @@
+body{
+    background-color: darkslateblue;
+}
+
+.product{
+    background-color: darkkhaki;
+    width: 200px;
+    max-width: 400px;
+    text-align: center;
+    padding: 1px;
+    display: inline-block;
+    margin: 10px;
+}
+
+
+img{
+    width: 70px;
+    height: 70px;
+}
