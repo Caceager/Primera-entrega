@@ -1,0 +1,1 @@
+[{"nombre":"asdas","precio":"dasdasd","imagen":"asdas","stock":"adsa","codigo":"asdasd","descripcion":"dasdasd","id":1,"timestamp":1656550367620}]

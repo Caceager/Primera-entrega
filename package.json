@@ -4,11 +4,17 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "firebase": "NODE_ENV=firebase node server.js",
+    "mongodb": "NODE_ENV=mongodb node server.js"
   },
   "author": "Agustin Cespedes",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^11.0.0",
+    "mongoose": "^6.4.1",
+    "nodemon": "^2.0.18",
+    "xlsx": "^0.18.5"
   }
 }
