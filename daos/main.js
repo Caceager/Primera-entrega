@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 async function ConectarMongo() {
     console.log('Iniciando conexion a mongodb');
     try{
-        await mongoose.connect('mongodb://localhost:27017/ecommerce', {
+        await mongoose.connect('mongodb+srv://agustinMongoCH:mongoCH@cluster0.fwdkeuy.mongodb.net/?retryWrites=true&w=majority', {
             useNewUrlParser: true
         });
         console.log('Conexion a mongodb completada.');
