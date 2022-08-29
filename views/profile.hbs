@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="/profile.css">
+</head>
+<body>
+<div id="sideflap">
+    <div id="userpic"></div>
+    <div id="userstats">
+        <div id="username">
+            {{datos.nombre}}
+            <div id="usertags">{{datos.username}}</div>
+        </div>
+        <div id="userbio">
+            <div id="biotext">
+                <p><b>Edad</b>: {{datos.edad}}</p>
+                <p><b>Telefono</b>: {{datos.telefono}}</p>
+                <p><b>Direccion</b>: {{datos.direccion}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="navigation">
+    <a class="pointerHover selected" id="botonProductos">Todos los productos</a>
+    <a class="pointerHover" id="botonCarrito">Carrito</a>
+    <div id="carritoId" idCarrito="{{datos.idCarrito}}"></div>
+</div>
+<div id="productos" class="productos productosTotales">
+    {{#each productos}}
+        <container class="iblock">
+            <div class="book">
+                <div class="title">{{this.nombre}}</div>
+                <div class="synop">{{this.descripcion}}</div>
+                <div class="details">
+                    <div class="fa fa-heart"></div>
+                    ${{this.precio}}
+                    <div class="fa fa-eye"></div>
+                    stock: {{this.stock}}
+                </div>
+            </div>
+            <div id="{{this.id}}" title="{{this.nombre}}" descripcion="{{this.descripcion}}" precio="{{this.precio}}" stock="{{this.stock}}" class="addToCart">
+                Agregar al carrito
+            </div>
+        </container>
+    {{/each}}
+</div>
+<div id="carrito" class="productos productosCarrito hidden">
+    {{#each carrito}}
+        <container class="iblock">
+            <div class="book">
+                <div class="title">{{this.nombre}}</div>
+                <div class="synop">{{this.descripcion}}</div>
+                <div class="details">
+                    <div class="fa fa-heart"></div>
+                    ${{this.precio}}
+                    <div class="fa fa-eye"></div>
+                    stock: {{this.stock}}
+                </div>
+            </div>
+            <div id="{{this.id}}" title="{{this.nombre}}" descripcion="{{this.descripcion}}" precio="{{this.precio}}" stock="{{this.stock}}" class="deleteFromCart">
+                Eliminar del carrito
+            </div>
+        </container>
+    {{/each}}
+</div>
+<script src="/perfil.js"></script>
+</body>
+</html>

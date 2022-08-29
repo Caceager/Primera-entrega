@@ -1,11 +1,12 @@
 const dotenv = require('dotenv');
 const path = require('path');
 
+const NODE_ENV = process.env.NODE_ENV || 'mongodb'
 dotenv.config({
-    path: path.resolve(__dirname, process.env.NODE_ENV + '.env')
+    path: path.resolve(__dirname, NODE_ENV + '.env')
 });
 module.exports = {
-    NODE_ENV: process.env.NODE_ENV || 'mongodb',
+    NODE_ENV,
     HOST: process.env.HOST || 'localhost',
-    PORT: process.env.PORT || 8080
+    PORT: process.env.PORT || 8081
 }

@@ -1,6 +1,6 @@
 const express = require('express');
 const cartRouter = express.Router();
-const {carrito : Carrito} = require('./daos/main.js');
+const {carrito} = require('./daos/main.js');
 
 
 const middleWareAutentication = (req, res, next) =>{
@@ -15,8 +15,6 @@ const middleWareAuth = (req, res, next) =>{
     else res.status(403).send({Error: 'Acceso denegado.'});
 }
 
-
-const carrito = new Carrito();
 console.log()
 cartRouter.post('/', middleWareAutentication, async (req, res)=>{
    res.send(`ID del carrito creado: ${await carrito.createCart()}`);

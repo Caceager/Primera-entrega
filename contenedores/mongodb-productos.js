@@ -9,7 +9,7 @@ class Productos{
 
     async getLatestID() {
         const last_product = await products.findOne({}, {}, { sort: { 'id' : -1 } });
-        this.actualId = last_product.id;
+        this.actualId = last_product?.id || 0;
     }
 
 

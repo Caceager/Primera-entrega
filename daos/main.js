@@ -1,6 +1,8 @@
 const database = process.env.DB;
 const {carrito: Carrito} = require(`./carrito/carrito-${database}.js`);
 const {productos: Productos} = require(`./productos/productos-${database}.js`);
+const {usuarios: Usuarios} = require(`./usuarios-${database}.js`);
+
 const mongoose = require("mongoose");
 
 async function ConectarMongo() {
@@ -14,7 +16,6 @@ async function ConectarMongo() {
     catch(err){
         console.log(err);
     }
-
 }
 
 
@@ -24,5 +25,4 @@ async function ConectarMongo() {
 if(database == "mongodb") ConectarMongo();
 //if (database == "firebase") ConectarFireBase();
 
-const a = {Hola: 'hola'};
-module.exports = {carrito: Carrito, productos: Productos, db: a};
+module.exports = {carrito: new Carrito(), productos: new Productos(), usuarios: new Usuarios()};

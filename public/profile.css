@@ -1,0 +1,226 @@
+body {
+    background: #151410;
+}
+#sideflap {
+    position: fixed;
+    display: block;
+    width: 300px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: #252420;
+    box-shadow: 0 0 10px -4px #000;
+    color: rgba(250, 250, 250, 0.8);
+    font-family: domine;
+}
+#userpic {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 200px;
+    box-shadow: inset 0 -60px 30px -30px #252420;
+    background-image: url("/images/putin.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
+    z-index: 0;
+}
+#username {
+    display: block;
+    text-align: center;
+    font-size: 35px;
+    z-index: 5;
+}
+#usertags {
+    display: block;
+    text-align: center;
+    font-size: 19px;
+    padding-bottom: 1em;
+    padding-top: 0.7em;
+    border-bottom: 1px solid;
+}
+#linkbtn {
+    display: inline-block;
+    text-align: center;
+    float: right;
+    padding: 0 1em;
+    font-size: 16px;
+    vertical-align: center;
+    border: 2px solid;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(250, 250, 250, 0);
+    transition: background 200ms;
+    user-select: none;
+}
+#linkbtn:hover {
+    background: rgba(250, 250, 250, 0.2);
+}
+#userstats {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 160px;
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+}
+#userstats .count {
+    display: block;
+}
+#userstats .count .num {
+    font-size: 1.4em;
+    margin-right: 0.25em;
+    display: inline-block;
+}
+#biotext {
+    display: inline-block;
+    width: 65%;
+    font-size: 14px;
+}
+#biolinks {
+    display: inline-block;
+    width: 30%;
+    float: right;
+}
+#navigation {
+    display: block;
+    position: fixed;
+    left: 300px;
+    right: 0;
+    top: 0;
+    padding: 1.3em;
+    background: #1c1b18;
+    z-index: 5;
+    color: rgba(250, 250, 250, 0.8);
+    text-align: left;
+    box-shadow: 0 0 10px -4px #000;
+}
+#navigation a {
+    font-size: 1.25em;
+    font-family: domine;
+    margin: 0.5em;
+}
+.productos {
+    display: block;
+    position: fixed;
+    left: 300px;
+    right: 0;
+    top: 45px;
+    bottom: 0;
+    padding: 10px;
+    overflow-Y: auto;
+}
+.iblock {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.productos .book {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    background: #383a3f;
+    vertical-align: top;
+    color: rgba(250, 250, 250, 0.9);
+    box-shadow: inset 0 -10px 70px rgba(200, 200, 200, 0.2), inset 5px 0 0 rgba(0, 0, 0, 0.5);
+}
+.productos .book .details {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.5em;
+    font-size: 14px;
+}
+.productos .book .title {
+    display: block;
+    padding: 0.66em;
+    padding-bottom: 0.25em;
+    font-size: 1.5em;
+    font-family: prata;
+}
+.productos .book .synop {
+    display: block;
+    padding-left: 1em;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(250, 250, 250, 0.8);
+    border: 2px solid #252420;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(250, 250, 250, 0.8);
+}
+::-webkit-scrollbar-thumb:active {
+    background: rgba(250, 250, 250, 0.8);
+}
+::-webkit-scrollbar-track {
+    background: #252420;
+    border: 0px none rgba(250, 250, 250, 0.8);
+    border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+    background: #252420;
+}
+::-webkit-scrollbar-track:active {
+    background: #252420;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+.hidden {
+    display: none;
+}
+
+.pointerHover:hover {
+    cursor: pointer;
+}
+.productos .addToCart {
+    text-align: center;
+    line-height: 40px;
+    width: 150px;
+    height: 40px;
+    margin-left: 20px;
+    background: #383a3f;
+    color: rgba(220, 250, 250, 0.9);
+    box-shadow: inset 0 -10px 70px rgba(200, 200, 200, 0.2), inset 5px 0 0 rgba(0, 0, 0, 0.5);
+}
+.addToCart:hover, .deleteFromCart:hover {
+    cursor: pointer;
+}
+
+.deleteFromCart {
+    text-align: center;
+    line-height: 40px;
+    width: 150px;
+    height: 40px;
+    margin-left: 20px;
+    background: #383a3f;
+    color: rgba(220, 250, 250, 0.9);
+    box-shadow: inset 0 -10px 70px rgba(200, 200, 200, 0.2), inset 5px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.selected {
+    background-color: #333333;
+}

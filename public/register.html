@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de usuario</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/register.css">
+</head>
+<body>
+<div class="testbox">
+    <h1>Registration</h1>
+
+    <form id="registerForm" method="post">
+        <label class="iconRequired" for="name"><i class="icon-envelope "></i></label>
+        <input type="text" name="username" id="mail" placeholder="Email"/>
+
+        <label class="iconRequired" for="name"><i class="icon-user"></i></label>
+        <input type="text" name="name" id="name" placeholder="Name"/>
+
+        <label class="iconRequired" for="name"><i class="icon-shield"></i></label>
+        <input type="password" name="password" id="pass" placeholder="Password"/>
+
+        <label class="icon" for="address"><i class="icon-user"></i></label>
+        <input type="text" name="address" id="address" placeholder="Dirección"/>
+
+        <label class="iconRequired" for="age"><i class="icon-user"></i></label>
+        <input type="text" name="age" id="age" placeholder="Edad"/>
+
+        <label class="icon" for="phone"><i class="icon-user"></i></label>
+        <input type="text" name="phone" id="phone" placeholder="Telefono"/>
+
+        <label class="icon" for="image"><i class="icon-user"></i></label>
+        <input type="text" name="image" id="image" placeholder="Foto"/>
+
+        <p>Los campos marcados con color naranja son obligatorios.</p>
+        <a id="registerButton" class="button">Register</a>
+    </form>
+</div>
+
+<script src="/register.js"></script>
+</body>
+</html>

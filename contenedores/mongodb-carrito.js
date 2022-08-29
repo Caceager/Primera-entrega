@@ -8,7 +8,7 @@ class Carrito{
     async getLastId(){
         try{
             const last_cart = await carts.findOne({}, {}, { sort: { id: -1 } });
-            this.actualId = last_cart.id;
+            this.actualId = last_cart?.id || 0;
         }
         catch(e){
             throw(e);

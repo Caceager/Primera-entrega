@@ -1,6 +1,6 @@
 const express = require('express');
 const productRouter = express.Router();
-const {productos : Productos} = require('./daos/main.js');
+const {productos : container} = require('./daos/main.js');
 productRouter.use(express.json());
 const middleWareAutentication = (req, res, next) =>{
     req.user ={
@@ -14,11 +14,6 @@ const middleWareAuth = (req, res, next) =>{
     if (req.user.isAdmin) next();
     else res.status(403).send({Error: 'Acceso denegado.'});
 }
-
-
-
-const container = new Productos();
-
 
 productRouter.get('/', middleWareAutentication, async (req, res) =>{
     res.type('json').send(JSON.stringify(await container.getAll(), null, 2));
