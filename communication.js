@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
-const accountSid = 'AC96f9c243cd339afc91d86d820f98d44a';
-const authToken = '1d148e45791ef2a549f39c626637f1c0';
+const accountSid = process.env.SID;
+const authToken = process.env.TWILIOAUTH;
 const client = require('twilio')(accountSid, authToken);
 
 const transporter = nodemailer.createTransport({
