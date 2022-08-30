@@ -59,7 +59,7 @@ async function agregarAlCarrito(id) {
 }
 productosTotales.forEach( (producto) => {
     producto.addEventListener('click', async(event) => {
-        alert(`Se ha agregado [${producto.nombre}] al carrito.`);
+        alert(`Se ha agregado [${event.target.getAttribute("title")}] al carrito.`);
         await agregarAlCarrito(event.target.id);
         agregarAlCarritoFront({
             nombre: event.target.getAttribute("title"),
