@@ -69,8 +69,6 @@ class Carrito{
         catch(e){
             throw (e);
         }
-
-
     }
     async deleteFromCart(id, prodID){
         try{
@@ -90,6 +88,22 @@ class Carrito{
             console.log(e);
             throw(e);
         }
+    }
+    async emptyCart(id) {
+        try{
+            const carrito = await carts.findOne({id: id});
+            if (!carrito) throw {Error: "Carrito no encontrado."};
+            const listaProductos = [];
+            const update = {
+                productos: JSON.stringify(listaProductos),
+            }
+            await carts.findOneAndUpdate({id: id}, update);
+        }
+        catch (e) {
+            throw e;
+        }
+
+
 
     }
 

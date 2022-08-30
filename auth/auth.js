@@ -4,6 +4,7 @@ const {usuarios : container} = require('../daos/main.js');
 const {carrito} = require("../daos/main");
 const session = require("express-session");
 const bcrypt = require("bcryptjs");
+const communication = require("../communication");
 
 const sess = session({
     secret: "secreto",
@@ -41,6 +42,7 @@ passport.use("registro", new LocalStrategy({
                 idCarrito: await carrito.createCart(),
             });
             done(null, user);
+            await communication.informarNuevoUsuario(user);
         }
         catch (e) {
             done(e);

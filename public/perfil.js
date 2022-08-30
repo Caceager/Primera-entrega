@@ -6,6 +6,23 @@ const botonProductos = document.getElementById("botonProductos");
 const idCarrito = document.getElementById("carritoId").getAttribute("idCarrito");
 const logOutForm = document.getElementById('logout');
 
+const buyContainer = document.getElementById("buyContainer");
+const price = document.getElementById("precioTotal");
+
+function actualizarPrecio() {
+    const cartItem = Array.from(document.getElementsByClassName("cartItem"));
+    let precio = 0;
+    cartItem.forEach( (item) => {
+        precio+= Number(item.getAttribute("precio"));
+    });
+    price.innerText = precio;
+    if(precio > 0) {
+        buyContainer.classList.remove("hidden");
+    }
+    else {
+        buyContainer.classList.add("hidden");
+    }
+}
 botonCarrito.addEventListener('click', () => {
    productos.classList.add("hidden");
    carrito.classList.remove("hidden");
@@ -33,7 +50,9 @@ function agregarAlCarritoFront(producto) {
     const deleteButton = document.createElement('div');
     deleteButton.id = producto.id;
     deleteButton.classList.add("deleteFromCart");
+    deleteButton.classList.add("cartItem");
     deleteButton.innerText = "Eliminar del carrito";
+    deleteButton.setAttribute('precio', producto.precio);
 
     container.innerHTML = `<div class="book">
                 <div class="title">${producto.nombre}</div>
@@ -50,7 +69,7 @@ function agregarAlCarritoFront(producto) {
         const id = event.target.id;
         await eliminarDelCarrito(id);
         event.target.parentNode.remove();
-
+        actualizarPrecio();
     });
     carrito.appendChild(container);
 }
@@ -68,6 +87,7 @@ productosTotales.forEach( (producto) => {
             stock: event.target.getAttribute("stock"),
             id: event.target.id
         });
+        actualizarPrecio();
     });
 });
 productosCarrito.forEach( (producto) => {
@@ -75,6 +95,8 @@ productosCarrito.forEach( (producto) => {
         const id = event.target.id;
         await eliminarDelCarrito(id);
         event.target.parentNode.remove();
-
+        actualizarPrecio();
     });
 })
+
+actualizarPrecio();

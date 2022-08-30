@@ -20,6 +20,15 @@
                 <p><b>Direccion</b>: {{datos.direccion}}</p>
             </div>
         </div>
+        <div id="buySection">
+            <div class="hidden" id="buyContainer">
+                <p><b>Precio total: $</b><span id="precioTotal">X</span></p>
+                <form action="/usuarios/buyCart" method="post">
+                    <button type="submit" id="comprarButton">Comprar carrito.</button>
+                </form>
+            </div>
+        </div>
+
     </div>
 </div>
 <div id="navigation">
@@ -62,7 +71,7 @@
                     stock: {{this.stock}}
                 </div>
             </div>
-            <div id="{{this.id}}" title="{{this.nombre}}" descripcion="{{this.descripcion}}" precio="{{this.precio}}" stock="{{this.stock}}" class="deleteFromCart">
+            <div id="{{this.id}}" title="{{this.nombre}}" descripcion="{{this.descripcion}}" precio="{{this.precio}}" stock="{{this.stock}}" class="cartItem deleteFromCart">
                 Eliminar del carrito
             </div>
         </container>

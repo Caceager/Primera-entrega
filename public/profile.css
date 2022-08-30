@@ -232,7 +232,37 @@ body {
     height: 40px;
     color: white;
     font-weight: bolder;
+    position: relative;
 }
 #logout:hover {
     cursor: pointer;
+    background-color: #444444;
+}
+.addToCart:active {
+    background-color: #444444;
+}
+
+
+#buySection {
+    margin-bottom: 50px;
+    border-top: solid white 1px;
+}
+
+#precioTotal {
+    display: inline;
+}
+
+#comprarButton {
+    width: 100px;
+    height: 40px;
+    font-weight: bolder;
+    color: white;
+    background-color: #333333;
+    border: solid #555555 2px;
+    border-radius: 10px;
+}
+
+#comprarButton:hover {
+    cursor: pointer;
+    background-color: #222222;
 }
