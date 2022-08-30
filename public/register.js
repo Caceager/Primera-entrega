@@ -18,7 +18,7 @@ async function postData(data) {
         });
     if(response.status === 500) alert("El usuario ya existe.");
     if(response.status === 200) {
-        window.location.href = "/";
+        window.location.href = "/usuarios/profile";
     }
 }
 const registerButton = document.getElementById("registerButton");

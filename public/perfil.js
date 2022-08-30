@@ -4,6 +4,7 @@ const productos = document.getElementById("productos");
 const botonCarrito = document.getElementById("botonCarrito");
 const botonProductos = document.getElementById("botonProductos");
 const idCarrito = document.getElementById("carritoId").getAttribute("idCarrito");
+const logOutForm = document.getElementById('logout');
 
 botonCarrito.addEventListener('click', () => {
    productos.classList.add("hidden");
@@ -52,13 +53,13 @@ function agregarAlCarritoFront(producto) {
 
     });
     carrito.appendChild(container);
-
 }
 async function agregarAlCarrito(id) {
     await fetch(`/api/carrito/${idCarrito}/productos/${id}`, {method: 'post'});
 }
 productosTotales.forEach( (producto) => {
     producto.addEventListener('click', async(event) => {
+        alert(`Se ha agregado [${producto.nombre}] al carrito.`);
         await agregarAlCarrito(event.target.id);
         agregarAlCarritoFront({
             nombre: event.target.getAttribute("title"),

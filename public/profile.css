@@ -224,3 +224,15 @@ body {
 .selected {
     background-color: #333333;
 }
+
+#logout {
+    display: inline-block;
+    background-color: #383a3f;
+    width: 100px;
+    height: 40px;
+    color: white;
+    font-weight: bolder;
+}
+#logout:hover {
+    cursor: pointer;
+}

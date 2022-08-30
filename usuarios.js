@@ -50,5 +50,12 @@ userRouter.post('/nuevoUsuario', auth.registro, (req, res) => {
 });
 userRouter.post('/login', auth.logueo);
 
+userRouter.post('/logout', (req, res) => {
+    if (!req.user) return res.redirect("/usuarios/login");
+    req.user = undefined;
+    req.session.destroy();
+    res.redirect("/");
+});
+
 
 module.exports = userRouter;

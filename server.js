@@ -29,6 +29,18 @@ app.use('/api/productos', productRouter);
 app.use('/api/carrito', cartRouter);
 app.use('/usuarios', userRouter);
 
+app.get('/', (req, res) => {
+   res.redirect('/usuarios/profile');
+});
+app.get('/login', (req, res) => {
+    res.redirect('/usuarios/login');
+});
+app.get('/register', (req, res) => {
+    res.redirect('/usuarios/register');
+});
+app.get('/*', (req, res) => {
+    res.redirect('/');
+});
 const port = process.env.PORT;
 const host = process.env.HOST;
 app.listen(port, ()=>{

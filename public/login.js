@@ -12,7 +12,7 @@ async function callLogin(body) {
             method: "POST",
             body: JSON.stringify(body)
         });
-    if(response.status === 500) alert("El usuario ya existe.");
+    if(response.status === 500) alert("Contraseña incorrecta.");
     if(response.status === 200) {
         window.location.href = "/usuarios/profile";
     }
