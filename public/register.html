@@ -28,9 +28,10 @@
 
         <label class="icon" for="phone"><i class="icon-user"></i></label>
         <input type="text" name="phone" id="phone" placeholder="Telefono"/>
-
-        <label class="icon" for="image"><i class="icon-user"></i></label>
-        <input type="text" name="image" id="image" placeholder="Foto"/>
+        <div id="uploadImage">
+            <label for="image">Foto de perfil<i class="icon-user"></i></label>
+            <input type="file" id="image" name="image" accept="image/*">
+        </div>
 
         <p>Los campos marcados con color naranja son obligatorios.</p>
         <a id="registerButton" class="button">Register</a>

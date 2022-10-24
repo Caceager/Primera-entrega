@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 const path = require('path');
 
-const NODE_ENV = process.env.NODE_ENV || 'mongodb'
+const NODE_ENV = process.env.NODE_ENV || 'local'
 dotenv.config({
     path: path.resolve(__dirname, NODE_ENV + '.env')
 });

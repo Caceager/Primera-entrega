@@ -1,4 +1,4 @@
-const {productos : Productos} = require('../../contenedores/firebase-productos.js');
+const {productos : Productos} = require('../../containers/persistency/firebase-productos.js');
 
 class ProductosDAO extends Productos{
     constructor(){

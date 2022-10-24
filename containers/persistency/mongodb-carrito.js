@@ -1,5 +1,5 @@
-const carts = require('../models/modeloCarrito.js');
-const products = require('../models/modeloProductos');
+const carts = require('../mongoModels/modeloCarrito.js');
+const products = require('../mongoModels/modeloProductos');
 
 class Carrito{
     constructor(){
@@ -24,7 +24,6 @@ class Carrito{
             }
             const carritoSaveModel = new carts(cart);
             await carritoSaveModel.save();
-            console.log(carritoSaveModel);
             return cart.id;
         }
         catch (e) {

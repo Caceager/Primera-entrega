@@ -1,4 +1,4 @@
-const {carrito : Carrito} = require('../../contenedores/firebase-carrito.js');
+const {carrito : Carrito} = require('../../containers/persistency/firebase-carrito.js');
 
 class CarritoDAO extends Carrito{
     constructor(){

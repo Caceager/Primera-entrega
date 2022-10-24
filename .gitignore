@@ -2,3 +2,6 @@ clave.json
 script.js
 /node_modules
 ultimoLibro.xlsx
+server/mongodb.env
+server/local.env
+server/production.env

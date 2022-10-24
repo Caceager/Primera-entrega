@@ -1,3 +1,6 @@
+/*
+  UNUSED;
+*/
 const {fbase: db} = require("./firebaseConnect.js");
 
 class Productos{

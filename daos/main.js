@@ -8,7 +8,8 @@ const mongoose = require("mongoose");
 async function ConectarMongo() {
     console.log('Iniciando conexion a mongodb');
     try{
-        await mongoose.connect('mongodb+srv://agustinMongoCH:mongoCH@cluster0.fwdkeuy.mongodb.net/?retryWrites=true&w=majority', {
+        console.log(process.env.DBUrl);
+        await mongoose.connect(process.env.DBUrl, {
             useNewUrlParser: true
         });
         console.log('Conexion a mongodb completada.');
@@ -18,11 +19,5 @@ async function ConectarMongo() {
     }
 }
 
-
-
-
-
-if(database == "mongodb") ConectarMongo();
-//if (database == "firebase") ConectarFireBase();
-
-module.exports = {carrito: new Carrito(), productos: new Productos(), usuarios: new Usuarios()};
+if(database === "mongodb") ConectarMongo();
+module.exports = {carrito: Carrito, productos: Productos, usuarios: Usuarios};

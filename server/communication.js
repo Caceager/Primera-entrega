@@ -29,18 +29,21 @@ async function informarNuevoUsuario(data) {
         console.log(info);
     }
     catch (e) {
-        console.log(e);
+        throw(e);
     }
 }
 
 async function enviarWhatsappsCompra(usuario, numeroUsuario, productos) {
-    const msg = await client.messages
-        .create({
+    try {
+        await client.messages.create({
             body: `Nuevo pedido de ${usuario}`,
             from: 'whatsapp:+14155238886',
             to: 'whatsapp:+59892273089'
         });
-    console.log(msg);
+    } catch (e) {
+        throw(e);
+    }
+
     if(numeroUsuario.length > 0) {
         try{
             const msg2 = await client.messages
@@ -49,10 +52,10 @@ async function enviarWhatsappsCompra(usuario, numeroUsuario, productos) {
                     from: 'whatsapp:+14155238886',
                     to: `whatsapp:${numeroUsuario}`
                 });
-            console.log(msg2);
         }
         catch (e) {
-            console.log("Numero no valido");
+            console.log(e);
+            throw(e);
         }
     }
     const mailOptions = {
@@ -67,7 +70,7 @@ async function enviarWhatsappsCompra(usuario, numeroUsuario, productos) {
         console.log(info);
     }
     catch (e) {
-        console.log(e);
+        throw(e);
     }
 }
 

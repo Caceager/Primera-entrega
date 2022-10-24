@@ -1,5 +1,5 @@
-const carts = require('../models/modeloCarrito.js');
-const usuarios = require('../models/modeloUsuario');
+const carts = require('../mongoModels/modeloCarrito.js');
+const usuarios = require('../mongoModels/modeloUsuario');
 
 class Usuarios{
     constructor(){
@@ -25,12 +25,11 @@ class Usuarios{
                 direccion: userData.direccion || null,
                 edad: userData.edad,
                 telefono: userData.telefono || null,
-                urlFoto: userData.urlFoto || null,
+                urlFoto: userData.foto || null,
                 idCarrito: userData.idCarrito,
             }
             const usuarioSaveModel = new usuarios(user);
             await usuarioSaveModel.save();
-            console.log(usuarioSaveModel);
             return usuarioSaveModel;
         }
         catch (e) {

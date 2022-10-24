@@ -1,15 +1,21 @@
 const express = require('express');
-require("./config.js");
-const productRouter = require('./productos.js');
-const cartRouter = require('./carrito.js');
-const userRouter = require('./usuarios.js');
-const mongoose = require("mongoose");
-const {NODE_ENV} = require("./config");
-
-const { usuarios } = require("./daos/main.js");
+require("./server/config.js");
+const productRouter = require('./controllers/productoController.js');
+const cartRouter = require('./controllers/carritoController.js');
+const userRouter = require('./controllers/usuarioController.js');
+const passport = require("passport");
 const {engine} = require("express-handlebars");
+const session = require("express-session");
 
 const app = express();
+app.use(session({
+    secret: "secreto",
+    resave: false,
+    saveUninitialized: false,
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
@@ -24,6 +30,8 @@ app.engine(
 );
 app.set('view engine', 'hbs');
 app.set('views', './views');
+
+require("./server/auth")(passport);
 
 app.use('/api/productos', productRouter);
 app.use('/api/carrito', cartRouter);
